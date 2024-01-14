@@ -1,0 +1,36 @@
+$var1 : 1px solid black;
+$val2 : #ff0000;
+
+$my-var1 : $var1;
+$my-var2 : 3px 5px;
+$fs : 16px;
+
+$my-var3 : background;
+$my-var4 : '.cls1';
+$my-var5 : 16;
+
+
+#{$my-var4}{
+    color:$val2 ;
+    font-size:#{$my-var5}px;
+}
+
+
+.cls1{
+    border:$var1;
+    // $my-var3:$val2; // 이런 형태는 해석이 안된다. #{} - interpolation 끼워넣기
+    #{$my-var3}:$val2; // css 속성을 변수로 사용할 때는 #{} - 사용한다
+
+}
+
+#aaa {
+    background:red;
+    border:1px solid black;
+    font-size:16px
+}
+
+@for $i from 1 through 3{
+    .box-#{$i}{
+        font-size:#{16 * $i}px;
+    }
+}
