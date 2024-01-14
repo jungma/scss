@@ -22,14 +22,23 @@ scss - 요즘 방식 : 중괄호 처리
 ## visual stidio code 확장 live sass compiler를 쓰는 방법 (일단 이방법 사용)
 setting.json 파일 수정
 {
+
 	"liveSassCompile.settings.formats": [
+ 
 		{
+  
 			"format": "compressed", // 포맷 형태 지정 nested/expanded/compact/compressed
+   
 			"extensionName": ".css",
+   
 			"savePath": "~/css", // path 지정
+   
 			"savePathReplacementPairs": null
+   
 		}
+  
 	],
+ 
 }
 
 ## 공식 컴파일러 사용 
