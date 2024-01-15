@@ -1,5 +1,12 @@
+// @import './partial/var';
+// @import './partial/var2';
+
+@use './partial/index';
+
+$color-primary1 :red;
+
 $var1 : 1px solid black;
-$val2 : #ff0000;
+$val2 : $color-primary1 ;
 
 $my-var1 : $var1;
 $my-var2 : 3px 5px;
@@ -10,10 +17,12 @@ $my-var4 : '.cls1';
 $my-var5 : 16;
 
 
+
 #{$my-var4}{
     color:$val2 ;
     font-size:#{$my-var5}px;
 }
+
 
 
 .cls1{
@@ -34,3 +43,5 @@ $my-var5 : 16;
         font-size:#{16 * $i}px;
     }
 }
+
+strong{color:index.$color-partial2}

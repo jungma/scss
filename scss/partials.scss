@@ -1,0 +1,8 @@
+@use './partial/var' as v2; // as 는 변수 명을 변경 가능하게 해줌
+@use './partial/var2';
+
+
+
+h1{
+    color:v2.$color-partial1;
+}

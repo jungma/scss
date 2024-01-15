@@ -51,3 +51,26 @@ https://sass-lang.com/documentation/cli/dart-sass/
 
 - css 속성을 변수로 사용시
 	> css 속성을 변수로 사용할 때는 #{} - 사용
+
+
+
+# Partial
+
+부분적인 part 부분 
+소스에 반복되는 부분들을 분리 분산시켜서 모듈화 시키는 기능
+
+파셜의 파일명은 _로시작 
+Sass는 _로 시작하는 파일은 컴파일 하지 않는다.
+불러들일 때는 @import '파일명' (_, 확장자 없이) 선언
+
+
+- @use 
+	> @use './partial/var2';
+	> use 사용이 보편적이다
+	> 중복된 변수 네이밍 사용 시 var.$color-primary / var2.$color-primary 사용으로 필요한 변수로 사용 가능
+	> @use './partial/var' as v2; // as 는 변수 명을 변경 가능하게 해줌
+
+- @forward
+> _index.scss 파일 생성 
+> _index.scss 파일 내 선언 : @forward './var' ; @forward './var2'; 
+> style.scss 파일 내 선언 : @use './partial/index';
