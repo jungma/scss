@@ -83,3 +83,30 @@ Sass는 _로 시작하는 파일은 컴파일 하지 않는다.
 > _index.scss 파일 생성 
 > _index.scss 파일 내 선언 : @forward './var' ; @forward './var2'; 
 > style.scss 파일 내 선언 : @use './partial/index';
+
+
+- 지역변수 / 전역변수
+	> 
+	<code>
+		$spacer : 5px; // 전역변수
+		class{
+    		$spacer10px : vars.$spacer * 2; // 중괄호 안에서 만든 변수는 중괄호 내에서만 사용 가능하다 = 지역변수!!
+    		margin-top:$spacer10px ;
+		}
+	</code>
+
+
+- 변수 이름 Tip
+	> '$color-primary' : 주요한 컬러
+	> '$color-secondary' : 두번쨰 중요한 컬러
+
+- 변수 연산
+	> $s = 10;
+	> width:#{$s * $s}px; // 100px
+
+- 클래스명 또한 변수로 활용 가능
+	> $class-name : '.sss';
+	> #{$class-name}{border:1px solid #ddd}
+	> #{$class-name}--text{border:1px solid #ddd}
+	> #{$class-name}__title--btn{border:1px solid #ddd}
+

@@ -2,6 +2,7 @@
 // @import './partial/var2';
 
 @use './partial/index';
+@use './partial/vars';
 
 $color-primary1 :red;
 
@@ -16,7 +17,9 @@ $my-var3 : background;
 $my-var4 : '.cls1';
 $my-var5 : 16;
 
+$s : 10;
 
+$class-name : '.sss';
 
 #{$my-var4}{
     color:$val2 ;
@@ -45,3 +48,24 @@ $my-var5 : 16;
 }
 
 strong{color:index.$color-partial2}
+
+.box2{
+    width:#{$s * $s}px;
+
+    height:100px;
+    border:1px solid red;
+    background:vars.$color-primar;
+
+    // 네스팅 nesting
+    & + &{
+        $spacer10px : vars.$spacer * 2; // 중괄호 안에서 만든 변수는 중괄호 내에서만 사용 가능하다 = 지역변수!!
+        margin-top:$spacer10px ;
+    }
+    
+}
+
+#{$class-name}{border:1px solid #ddd}
+#{$class-name}--text{border:1px solid #ddd}
+#{$class-name}__title--btn{border:1px solid #ddd}
+
+
