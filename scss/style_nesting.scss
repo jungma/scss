@@ -1,0 +1,43 @@
+$phone : 450px;
+$tablet : 800px;
+
+
+.btn{
+    display:inline-block;
+    padding:20px;
+    font-size:18px;
+}
+
+.text-box{
+    position:relative;
+    width:300px;
+    border:1px solid #333;
+    @media screen and (max-width:$tablet){
+        width:90%;
+    }
+    @media screen and (max-width:$phone){
+        width:40%;
+    }
+    & > .text-box__title{
+        font-size:20px;
+        color:blue;
+    }
+    & > .text-box__title--red{
+        font-size:20px;
+        color:red;
+    }
+    & > .text-box__content{
+        font-size:16px;
+    }
+    & > .text-box__btn-view{
+        position:absolute;
+        right:10px;
+        top:5px;
+        border:2px solid black;
+        border-radius:10px;
+        background:orange;
+    
+    }
+}
+
+

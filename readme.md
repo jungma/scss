@@ -110,3 +110,30 @@ Sass는 _로 시작하는 파일은 컴파일 하지 않는다.
 	> #{$class-name}--text{border:1px solid #ddd}
 	> #{$class-name}__title--btn{border:1px solid #ddd}
 
+
+- Nesting : 품다, 내포하다(안쪽으로 포함한다)
+	> 
+	<code>
+	#box > .box{
+		& > .box{
+			font-size:24px;
+			@media screen and (max-width:400px){
+				font-size:60px;
+			}
+		}
+	}
+	</code>
+
+- CSS - BEM 구조
+B : Block - 특정 독립적인 요소
+E : Element - 하위 요소들
+M : Modifier - 수정자
+
+CSS id class 등의 이름을 구조적으로 붙여주는 방법
+.text-box
+.text-box__title
+.text-box__content
+.text-box__content__desc
+
+__ 두개는 하위 포함
+- 글자띄어쓰기 의미

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesting</title>
+    <link rel="stylesheet" href="../scss/css/style_nesting.min.css">
+</head>
+<body>
+
+    <header>헤더
+        <button class="btn">로그인</button>
+    </header>
+    <section>대문이미지</section>
+    <div class="text-box">
+        <div class="text-box__title">제목1</div>
+        <div class="text-box__content">
+            <p class="text-box__desc">글내용1</p>
+        </div>
+        <button class="btn text-box__btn-view">원본보기</button>
+    </div>    
+    <div class="text-box">
+        <div class="text-box__title--red">제목2</div>
+        <div class="text-box__content">
+            <p class="text-box__desc">글내용2</p>
+        </div>
+        <button class="btn text-box__btn-view">원본보기</button>
+    </div>
+    <div class="text-box">
+        <div class="text-box__title">제목3</div>
+        <div class="text-box__content">
+            <p class="text-box__desc">글내용3</p>
+        </div>
+        <button class="btn text-box__btn-view">원본보기</button>
+    </div>
+</body>
+</html>
