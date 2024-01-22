@@ -21,6 +21,9 @@ $tablet : 800px;
     & > .text-box__title{
         font-size:20px;
         color:blue;
+    }   
+     & > &__title{
+        font-size:24px;
     }
     & > .text-box__title--red{
         font-size:20px;
@@ -37,6 +40,9 @@ $tablet : 800px;
         border-radius:10px;
         background:orange;
     
+    }
+    & &__desc{
+        font-size:50px
     }
 }
 

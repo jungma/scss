@@ -23,6 +23,9 @@
   font-size: 20px;
   color: blue;
 }
+.text-box > .text-box__title {
+  font-size: 24px;
+}
 .text-box > .text-box__title--red {
   font-size: 20px;
   color: red;
@@ -37,4 +40,7 @@
   border: 2px solid black;
   border-radius: 10px;
   background: orange;
+}
+.text-box .text-box__desc {
+  font-size: 50px;
 }/*# sourceMappingURL=style_nesting.css.map */

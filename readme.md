@@ -137,3 +137,18 @@ CSS id class 등의 이름을 구조적으로 붙여주는 방법
 
 __ 두개는 하위 포함
 - 글자띄어쓰기 의미
+
+- Nesting 추가내용
+
+<code>
+.text-box{
+	 & > .text-box__title{
+
+	 }
+	 & > &__title{
+
+	 }
+}
+</code>
+
+>  & > .text-box__title / & > &__title : 두가지 표현 가능
