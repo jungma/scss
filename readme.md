@@ -152,3 +152,10 @@ __ 두개는 하위 포함
 </code>
 
 >  & > .text-box__title / & > &__title : 두가지 표현 가능
+## map file 
+
+settings.json
+
+"livesassCompile.settings.generateMap" : true;
+이후 컴파일 하게 되면 map 파일이 생성된다.
+map파일이 생성되게 세팅한 경우 크롬 개발자 도구에서 scss로 확인 가능
