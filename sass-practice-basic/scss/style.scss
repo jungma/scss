@@ -1,0 +1,164 @@
+@use './partials/vars';
+
+// CSS
+*, *::before, *::after{
+    box-sizing:border-box;
+}
+
+html{height:100%}
+body{
+    height:100%;
+    margin:0;
+    font-family:vars.$ff;
+    font-size:vars.$fs-body;
+    color:vars.$color-body;
+}
+
+h1{
+    margin:0 0 vars.$spacer 0;
+    padding:vars.$spacer * 0.7 0;
+    font-size:vars.$fs-h1;
+    color:vars.$color-heading;
+    letter-spacing:vars.$ls;
+    text-transform: uppercase;
+}
+
+#mall-events-container{
+    padding:vars.$spacer 0;
+    text-align:center;
+}
+
+.events{
+    width:95%;
+    max-width:1000px;
+    margin:0 auto;
+    padding-top:vars.$spacer;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.event{
+    background:vars.$color-white;
+    box-shadow:vars.$bs;
+    padding:(vars.$spacer * 1.5) (3 * vars.$spacer);
+    border-top-left-radius:130px;
+    border-bottom-right-radius:130px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:vars.$spacer * 1.5;
+
+    &:nth-of-type(1){
+        align-self:flex-start;
+    }
+    &:nth-of-type(3){ 
+        align-self:flex-end;
+    }
+
+    & + & {
+        margin-top:vars.$spacer * -1.5;
+    }
+
+    &__title{
+        color:vars.$color-heading;
+        letter-spacing:vars.$ls; 
+        text-transform: uppercase;
+    }
+
+    &__list{
+        margin:0;
+        padding:0;
+        list-style: none;
+
+    }
+
+    &__list-item{
+        font-size:vars.$fs-normal * 1.3;
+        &:not(:last-of-type)::after{
+            content:'';
+            display:block;
+            height:1px;
+            background:vars.$color-light-gray;
+            margin:vars.$spacer * 0.3 0;
+
+        }
+    }
+
+    &__cost{
+        font-size:vars.$fs-l;
+        font-weight:vars.$ff-b;
+        color:vars.$color-accent;
+        margin:vars.$spacer * 1.5 0;
+
+        span{
+            font: {
+                size:vars.$fs-body;
+                weight:vars.$ff-l;
+            }
+        }
+    }
+
+
+}
+
+.event{
+    &--accent{
+        background:vars.$color-accent;
+        box-shadow:vars.$bs-accent;
+        transform:rotate(-10deg);
+
+        & .event__title,
+        & .event__cost{
+            color:vars.$color-white;
+        }
+
+        & .event__list{
+            color:lighten(vars.$color-accent, 40%);
+
+            //lighten : sass 에서 쓰이는 함수로 $color-accent 를 40% 밝게 표현
+        }
+        & .event__list-item:after{
+            background:lighten(vars.$color-accent, 40%);
+
+            //lighten : sass 에서 쓰이는 함수로 $color-accent 를 40% 밝게 표현
+        }
+        
+        & .event__cost{
+            margin:vars.$spacer * 3 0;
+        }
+    }
+}
+
+.button{
+    display:inline-block;
+    padding:vars.$spacer vars.$spacer * 2.5;
+    background:vars.$color-gray;
+    border-radius:30px;
+    text: {
+        transform:uppercase;
+        decoration: none;
+    }
+    font: {
+        weight:vars.$ff-b;
+        size:vars.$fs-sm;
+
+    }
+    color:vars.$color-white;
+    letter-spacing:vars.$ls;
+    transition: all ease-out 200ms;
+
+    &:hover{
+        box-shadow:vars.$bs;
+        background: vars.$color-accent;
+        transform:scale(1.22);
+    }
+
+    &--accent{
+        background:vars.$color-white;
+        color:vars.$color-accent;
+    }
+}
