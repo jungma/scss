@@ -1,0 +1,48 @@
+@use 'sass:color';
+
+%box-style{
+    width:100px;
+    height:100px;
+    font-size:40px;
+    border:5px solid #000;
+}
+
+@function get-bg-color($text-color){
+    $l : color.lightness($text-color);// 인자 글자색의 밝기를 저장
+    @debug $l; // @debug 이해 못함 
+    $bg : $text-color;
+    $bs : color.complement($text-color);
+    
+    //밝기가 70% 이상일때
+    @if $l >= 70% {
+        // $bg : darken($text-color, 40%);
+        $bg : darken($bs, 40%);
+    }
+    // 30% 초과 70% 미만 
+    @else if $l > 30% and $l < 70%{
+        $bg : $bs;
+    }
+
+    //밝기가 50% 미만일때
+    @else{
+        // $bg : lighten($text-color, 40%);
+        $bg : lighten($bs, 40%);
+    }
+
+    @return $bg;
+}
+
+.box1{
+    @extend %box-style;
+    $c:rgb(255, 242, 0);
+    color:$c;
+    background:get-bg-color($c);
+}
+
+.box2{
+    @extend %box-style;
+    $c:#f35e5e;
+    color:$c;
+    background:get-bg-color($c);
+}
+
